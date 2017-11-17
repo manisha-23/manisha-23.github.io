@@ -58,12 +58,48 @@
                 <md-toolbar md-scroll-shrink>
                     <div style="background:#FDD835" class="md-toolbar-tools">Welcome to my page on GitHub &nbsp; <i class="fa fa-github"></i></div>
                 </md-toolbar>
+                <md-list>
+                    <md-subheader class="md-no-sticky">Technologies that built this page</md-subheader>
+                    <md-list-item ng-repeat="person in people" ng-click="goToPerson(person.name, $event)" class="noright">
+                        <img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" />
+                        <p>{{ person.name }}</p>
+                        <md-checkbox class="md-secondary" ng-model="person.selected"></md-checkbox>
+                        <md-icon md-svg-icon="communication:email" ng-click="doSecondaryAction($event)" aria-label="Send Email" class="md-secondary md-hue-3"></md-icon>
+                        <md-icon class="md-secondary" ng-click="doSecondaryAction($event)" aria-label="Chat" md-svg-icon="communication:message"></md-icon>
+                    </md-list-item>
+                    <md-divider></md-divider>
+                </md-list>
             </div>
         </script>
     </div>
     <script type="text/javascript">
         angular.module('MyApp', ['ngMaterial', 'ngMessages']).controller('GitHubPage', function ($scope, $mdDialog, $http) {
-
+            $scope.people = [
+                { name: 'Angularjs 1.5.5', img: 'img/100-0.jpeg', newMessage: true },
+                { name: 'Angularjs Material', img: 'img/100-1.jpeg', newMessage: true },
+                { name: 'HTML', img: 'img/100-2.jpeg', newMessage: false },
+                { name: 'CSS', img: 'img/100-2.jpeg', newMessage: false }
+            ];
+            $scope.goToPerson = function (person, event) {
+                $mdDialog.show(
+                    $mdDialog.alert()
+                        .title('Navigating')
+                        .textContent('Inspect ' + person)
+                        .ariaLabel('Person inspect demo')
+                        .ok('Neat!')
+                        .targetEvent(event)
+                );
+            };
+            $scope.doSecondaryAction = function (event) {
+                $mdDialog.show(
+                    $mdDialog.alert()
+                        .title('Secondary Action')
+                        .textContent('Secondary actions can be used for one click actions')
+                        .ariaLabel('Secondary click demo')
+                        .ok('Neat!')
+                        .targetEvent(event)
+                );
+            };
         });
     </script>
 </body>
