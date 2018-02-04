@@ -1,0 +1,19 @@
+
+student---->collection
+sr ---->roll no
+sn ---->name
+sc ---->city
+sg ---->gender
+sem1 
+sem2
+se  ---->email
+ss ----->stream
+
+
+  db.collection("customers").deleteOne(myquery, function(err, obj) {
+
+}
+
+
+
+
