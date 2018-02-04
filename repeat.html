@@ -1,0 +1,15 @@
+<script src="angular.min.js"></script> 
+
+<body ng-app="">
+
+
+<div ng-init="stud1=[{roll:'1001',name:'Ravi'},{roll:'1002',name:'Sachin'}]">
+{{ stud1[1].roll}}
+{{stud1[1].name}}
+
+<div>
+<h1>Repeat</h1>
+<li ng-repeat="std in stud1">
+{{ 'roll:' + std.roll+ ',name: '+std.name }}
+</li>
+<div>

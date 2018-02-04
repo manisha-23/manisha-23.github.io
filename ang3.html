@@ -1,0 +1,15 @@
+<html lang="en-US">
+<script src="angular.min.js"></script>
+<body>
+<pre>
+<div ng-app="">
+<b>Invoice:</b><br>
+Rate: <input type="number" min="0" ng-model="rate"><br>
+Principal: <input type="number" min="0" ng-model="principal"><br>
+Time: <input type="number" min="0" ng-model="time"><br>
+
+<b>Total:</b> {{(rate * principal * time)/100}}
+</div>
+</pre>
+</body>
+</html>

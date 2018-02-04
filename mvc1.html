@@ -1,0 +1,25 @@
+<script src="angular.min.js"></script>
+
+<div ng-app="myapp" ng-controller="f1">
+
+<input type="text" ng-model="v1">
+
+You have {{v2()}}
+
+</div>
+
+<script>
+ var app=angular.module("myapp", []);
+
+app.controller("f1", function($scope) {
+    $scope.v1=0;
+    $scope.v2=function(){
+return parseInt($scope.v1)+5;
+};    
+});
+
+</script>
+
+
+<! we have to mention the ng-controller="f1" in div tag, we have to follow the syntax>
+<! first div tag, then the input syntax>

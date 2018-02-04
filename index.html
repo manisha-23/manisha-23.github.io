@@ -1,106 +1,36 @@
-﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="favicon.png" />
-    <meta name="theme-color" content="#FDD835" />
-    <meta name="msapplication-navbutton-color" content="#FDD835" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="#FDD835" />
-    <title>Welcome to my page on GitHub!</title>
-    <link rel="icon" href="favicon.png" />
-    <link href="Content/font-awesome.css" rel="stylesheet" />
-    <script src="Scripts/angular.min.js"></script>
-    <link href="Content/angular-material.min.css" rel="stylesheet" />
-    <script src="Scripts/angular-animate.min.js"></script>
-    <script src="Scripts/angular-aria.min.js"></script>
-    <script src="Scripts/angular-material.min.js"></script>
-    <script src="Scripts/angular-messages.min.js"></script>
+    <title>Angular 2 QuickStart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- Load libraries (Note: IE required polyfills, in this exact order_ -->
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+
+    <!-- Configure SystemJS -->
+    <script>
+        System.config({
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                }
+            }
+        });
+        System.import('app/js/main').then(null, console.error.bind(console));
+    </script>
 </head>
 <body>
-    <div ng-cloak ng-app="MyApp" ng-controller="GitHubPage">
-        <md-content>
-            <md-tabs md-dynamic-height md-border-bottom md-align-tabs="top" md-stretch-tabs="auto">
-                <md-tab label="Welcome">
-                    <md-content>
-                        <div style="height:100%;overflow-y:auto;" ng-include src="'Welcome.html'"></div> 
-                    </md-content>
-                </md-tab>
-                <md-tab label="About me">
-                    <md-content>
-                        <div>
-                            <md-toolbar md-scroll-shrink>
-                                <div style="background:#FDD835" class="md-toolbar-tools">About me</div>
-                            </md-toolbar>
-                        </div>
-                        <h1 class="md-display-2">About me - Coming soon &nbsp; <i class="fa fa-spinner fa-spin"></i></h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
-                        <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
-                        <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
-                    </md-content>
-                </md-tab>
-                <md-tab label="Blog">
-                    <md-content>
-                        <div>
-                            <md-toolbar md-scroll-shrink>
-                                <div style="background:#FDD835" class="md-toolbar-tools">Blog</div>
-                            </md-toolbar>
-                        </div>
-                        <h1 class="md-display-2">Blog - About to start &nbsp; <i class="fa fa-cog fa-spin"></i></h1>
-                        <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
-                    </md-content>                
-                </md-tab>
-            </md-tabs>
-        </md-content>
-        <script type="text/ng-template" id="Welcome.html">
-            <div>
-                <md-toolbar md-scroll-shrink>
-                    <div style="background:#FDD835" class="md-toolbar-tools">Welcome to my page on GitHub &nbsp; <i class="fa fa-github"></i></div>
-                </md-toolbar>
-                <md-list>
-                    <md-subheader class="md-no-sticky">Technologies that built this page</md-subheader>
-                    <md-list-item ng-repeat="person in people" ng-click="goToPerson(person.name, $event)" class="noright">
-                        <img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" />
-                        <p>{{ person.name }}</p>
-                        <md-checkbox class="md-secondary" ng-model="person.selected"></md-checkbox>
-                        <md-icon md-svg-icon="communication:email" ng-click="doSecondaryAction($event)" aria-label="Send Email" class="md-secondary md-hue-3"></md-icon>
-                        <md-icon class="md-secondary" ng-click="doSecondaryAction($event)" aria-label="Chat" md-svg-icon="communication:message"></md-icon>
-                    </md-list-item>
-                    <md-divider></md-divider>
-                </md-list>
-            </div>
-        </script>
-    </div>
-    <script type="text/javascript">
-        angular.module('MyApp', ['ngMaterial', 'ngMessages']).controller('GitHubPage', function ($scope, $mdDialog, $http) {
-            $scope.people = [
-                { name: 'Angularjs 1.5.5', img: 'img/100-0.jpeg', newMessage: true },
-                { name: 'Angularjs Material', img: 'img/100-1.jpeg', newMessage: true },
-                { name: 'HTML', img: 'img/100-2.jpeg', newMessage: false },
-                { name: 'CSS', img: 'img/100-2.jpeg', newMessage: false }
-            ];
-            $scope.goToPerson = function (person, event) {
-                $mdDialog.show(
-                    $mdDialog.alert()
-                        .title('Navigating')
-                        .textContent('Inspect ' + person)
-                        .ariaLabel('Person inspect demo')
-                        .ok('Neat!')
-                        .targetEvent(event)
-                );
-            };
-            $scope.doSecondaryAction = function (event) {
-                $mdDialog.show(
-                    $mdDialog.alert()
-                        .title('Secondary Action')
-                        .textContent('Secondary actions can be used for one click actions')
-                        .ariaLabel('Secondary click demo')
-                        .ok('Neat!')
-                        .targetEvent(event)
-                );
-            };
-        });
-    </script>
+<div class="container-fluid">
+    <my-app>Loading...</my-app>
+</div>
 </body>
 </html>

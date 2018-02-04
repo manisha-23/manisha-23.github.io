@@ -1,6 +1,6 @@
-var a=5;
-for(i=0;i<10;i++)
-{
- 	var b=console.log(5 "/*" i "=");
-	console.log(b);
-}
+var express = require('express');
+var app = express();
+app.use(express.static('public'));
+app.get('/input',function (req,res){
+res.sendFile( __dirname + "/" + "form_get.html");
+})

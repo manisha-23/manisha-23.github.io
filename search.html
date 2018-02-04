@@ -1,6 +1,26 @@
+<html lang="en-US">
+<script src="angular.min.js"></script> /*//div and span tag has no ATTRIBUTES,so we easilyuse in the html program */
 <body>
-<form action=/search method=post>
-Roll No: <input type=text name=sr>
-<input type=submit value=search>
-</form>
+<pre>
+<div ng-app="" ng-init="c1='India'">//variable  handling
+{{c1}}
+<div ng-init="stud={roll:'1001',name:'Ravi'}">
+{{ stud.roll}}
+{{stud.name}}
+
+<div ng-init="stud1={roll:'1002',name:'Sachin}">
+{{ stud1[1].roll}}
+{{stud1[1].name}}
+
+<div ng-init="stud2={roll:'1003',name:'Randhir'}">
+
+{{ stud2[2].roll}}
+{{stud2[2].name}}
+<div ng-init="stud3=[{roll:'1004',name:'Sanju'}">
+
+{{ stud3[0].roll}}
+{{stud3[0].name}}
+</div>
+</pre>
 </body>
+</html>
